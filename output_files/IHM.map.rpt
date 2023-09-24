@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IHM
-Sun Sep 24 14:25:08 2023
+Sun Sep 24 16:52:41 2023
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -13,14 +13,13 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |transmiter
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,16 +46,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 24 14:25:08 2023          ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 24 16:52:41 2023          ;
 ; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                      ; IHM                                            ;
-; Top-level Entity Name              ; transmiter                                     ;
+; Top-level Entity Name              ; ContinuosM                                     ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 38                                             ;
-;     Total combinational functions  ; 38                                             ;
-;     Dedicated logic registers      ; 28                                             ;
-; Total registers                    ; 28                                             ;
-; Total pins                         ; 13                                             ;
+; Total logic elements               ; 79                                             ;
+;     Total combinational functions  ; 79                                             ;
+;     Dedicated logic registers      ; 15                                             ;
+; Total registers                    ; 15                                             ;
+; Total pins                         ; 21                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -70,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; transmiter         ; IHM                ;
+; Top-level entity name                                            ; ContinuosM         ; IHM                ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -163,7 +162,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -172,40 +172,40 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
-; transmiter.v                     ; yes             ; User Verilog HDL File  ; C:/Users/wesle/Documents/PBL1-SD 1.1.0/transmiter.v ;         ;
+; ContinuosM.v                     ; yes             ; User Verilog HDL File  ; C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v ;         ;
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 38          ;
-;                                             ;             ;
-; Total combinational functions               ; 38          ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 11          ;
-;     -- 3 input functions                    ; 13          ;
-;     -- <=2 input functions                  ; 14          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 26          ;
-;     -- arithmetic mode                      ; 12          ;
-;                                             ;             ;
-; Total registers                             ; 28          ;
-;     -- Dedicated logic registers            ; 28          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 13          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; start~input ;
-; Maximum fan-out                             ; 28          ;
-; Total fan-out                               ; 239         ;
-; Average fan-out                             ; 2.60        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 79        ;
+;                                             ;           ;
+; Total combinational functions               ; 79        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 35        ;
+;     -- 3 input functions                    ; 23        ;
+;     -- <=2 input functions                  ; 21        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 66        ;
+;     -- arithmetic mode                      ; 13        ;
+;                                             ;           ;
+; Total registers                             ; 15        ;
+;     -- Dedicated logic registers            ; 15        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 21        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 46        ;
+; Total fan-out                               ; 320       ;
+; Average fan-out                             ; 2.35      ;
++---------------------------------------------+-----------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -213,9 +213,27 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |transmiter                ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |transmiter         ; transmiter  ; work         ;
+; |ContinuosM                ; 79 (79)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |ContinuosM         ; ContinuosM  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; out_loop[0]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[1]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[2]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[3]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[4]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[5]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[6]$latch                                  ; out_loop[7]         ; yes                    ;
+; out_loop[7]$latch                                  ; out_loop[7]         ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -223,25 +241,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 28    ;
-; Number of registers using Synchronous Clear  ; 13    ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 18    ;
+; Total registers                              ; 15    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 15    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; done~reg0                              ; 2       ;
-; Nbits[3]                               ; 3       ;
-; Total number of inverted registers = 2 ;         ;
-+----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -249,20 +256,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |transmiter|bufferTX[0]    ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |transmiter|counterBR[12]  ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |transmiter|Nbits[0]       ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |ContinuosM|count          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |transmiter ;
-+-----------------+---------------+------------------------------------------+
-; Parameter Name  ; Value         ; Type                                     ;
-+-----------------+---------------+------------------------------------------+
-; baundRateSerial ; 1010001011000 ; Unsigned Binary                          ;
-+-----------------+---------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -270,24 +265,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 28                          ;
-;     CLR               ; 2                           ;
-;     ENA               ; 9                           ;
-;     ENA CLR           ; 3                           ;
-;     ENA CLR SCLR      ; 13                          ;
-;     ENA SLD           ; 1                           ;
-; cycloneiii_lcell_comb ; 39                          ;
-;     arith             ; 12                          ;
-;         2 data inputs ; 12                          ;
-;     normal            ; 27                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 11                          ;
+; boundary_port         ; 21                          ;
+; cycloneiii_ff         ; 15                          ;
+;     CLR               ; 15                          ;
+; cycloneiii_lcell_comb ; 79                          ;
+;     arith             ; 13                          ;
+;         2 data inputs ; 13                          ;
+;     normal            ; 66                          ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 35                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.11                        ;
+; Max LUT depth         ; 4.30                        ;
+; Average LUT depth     ; 2.59                        ;
 +-----------------------+-----------------------------+
 
 
@@ -296,7 +287,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -306,7 +297,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sun Sep 24 14:24:26 2023
+    Info: Processing started: Sun Sep 24 16:52:22 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IHM -c IHM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -314,23 +305,47 @@ Info (12021): Found 1 design units, including 1 entities, in source file transmi
     Info (12023): Found entity 1: transmiter File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/transmiter.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file receiver.v
     Info (12023): Found entity 1: Receiver File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/Receiver.v Line: 1
-Info (12127): Elaborating entity "transmiter" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at transmiter.v(40): truncated value with size 8 to match size of target (4) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/transmiter.v Line: 40
-Info (13000): Registers with preset signals will power-up high File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/transmiter.v Line: 4
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (12021): Found 1 design units, including 1 entities, in source file continuosm.v
+    Info (12023): Found entity 1: ContinuosM File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 1
+Info (12127): Elaborating entity "ContinuosM" for the top level hierarchy
+Warning (10240): Verilog HDL Always Construct warning at ContinuosM.v(11): inferring latch(es) for variable "out_loop", which holds its previous value in one or more paths through the always construct File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[0]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[1]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[2]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[3]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[4]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[5]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[6]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Info (10041): Inferred latch for "out_loop[7]" at ContinuosM.v(11) File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 11
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "data_send~reg0" is converted into an equivalent circuit using register "data_send~reg0_emulated" and latch "data_send~1" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 5
+    Warning (13310): Register "count[13]" is converted into an equivalent circuit using register "count[13]~_emulated" and latch "count[13]~1" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[12]" is converted into an equivalent circuit using register "count[12]~_emulated" and latch "count[12]~5" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[11]" is converted into an equivalent circuit using register "count[11]~_emulated" and latch "count[11]~9" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[10]" is converted into an equivalent circuit using register "count[10]~_emulated" and latch "count[10]~13" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[9]" is converted into an equivalent circuit using register "count[9]~_emulated" and latch "count[9]~17" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[8]" is converted into an equivalent circuit using register "count[8]~_emulated" and latch "count[8]~21" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[7]" is converted into an equivalent circuit using register "count[7]~_emulated" and latch "count[7]~25" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[6]" is converted into an equivalent circuit using register "count[6]~_emulated" and latch "count[6]~29" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[5]" is converted into an equivalent circuit using register "count[5]~_emulated" and latch "count[5]~33" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[4]" is converted into an equivalent circuit using register "count[4]~_emulated" and latch "count[4]~37" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[3]" is converted into an equivalent circuit using register "count[3]~_emulated" and latch "count[3]~41" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[2]" is converted into an equivalent circuit using register "count[2]~_emulated" and latch "count[2]~45" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[1]" is converted into an equivalent circuit using register "count[1]~_emulated" and latch "count[1]~49" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
+    Warning (13310): Register "count[0]" is converted into an equivalent circuit using register "count[0]~_emulated" and latch "count[0]~53" File: C:/Users/wesle/Documents/PBL1-SD 1.1.0/ContinuosM.v Line: 27
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/wesle/Documents/PBL1-SD 1.1.0/output_files/IHM.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 39 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4778 megabytes
-    Info: Processing ended: Sun Sep 24 14:25:08 2023
-    Info: Elapsed time: 00:00:42
-    Info: Total CPU time (on all processors): 00:00:34
+Info (21057): Implemented 110 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 89 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Sun Sep 24 16:52:41 2023
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:33
 
 
 +------------------------------------------+
