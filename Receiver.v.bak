@@ -1,9 +1,0 @@
-module Receiver(clk, rst, start, rx, data_out, done);
-
-	input clk, rst, start, rx
-	output reg [8:0] data_out;
-	output reg done;
-	
-	parameter  idle = 2'b00, sleep = 2'b01 , read = 2'b10;
-
-endmodule

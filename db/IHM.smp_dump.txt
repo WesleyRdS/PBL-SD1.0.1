@@ -1,6 +1,0 @@
-
-State Machine - |Receiver|state
-Name state.idle state.read state.sleep 
-state.idle 0 0 0 
-state.sleep 1 0 1 
-state.read 1 1 0 
