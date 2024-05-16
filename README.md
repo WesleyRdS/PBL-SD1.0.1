@@ -1,4 +1,4 @@
-#Interface sensor/dispositivo
+# Interface sensor/dispositivo
 
 Este código em Verilog HDL é um módulo de controle completo para uma FPGA que lida com a comunicação serial RS232 (UART) e controla o fluxo de dados entre um dispositivo externo (como um microcontrolador ou outro FPGA) e os sensores conectados à FPGA. Aqui está uma visão geral do que o código faz:
 
